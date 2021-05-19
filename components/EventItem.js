@@ -10,7 +10,7 @@ export default function EventItem({ evt }) {
           src={
             evt.image
               ? evt.image.formats.thumbnail.url
-              : 'images/event.defaut.png'
+              : '/images/event.defaut.png'
           }
           width={170}
           height={100}
