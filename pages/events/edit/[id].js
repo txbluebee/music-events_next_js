@@ -179,10 +179,12 @@ export default function EditEventPage({ evt }) {
   );
 }
 
-export async function getServerSideProps({ params: { id } }) {
+export async function getServerSideProps({ params: { id }, req }) {
   const res = await fetch(`${API_URL}/events/${id}`);
   const evt = await res.json();
 
+  console.log(req.headers.cookie);
+  // token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjIxNTM3MTEyLCJleHAiOjE2MjQxMjkxMTJ9.l6ALzDZqnVTewRNCgEVcfX5c1OM0FdsdcazB9pbO-ls
   return {
     props: { evt },
   };
