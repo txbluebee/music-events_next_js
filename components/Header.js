@@ -11,16 +11,22 @@ export default function Header() {
   return (
     <header className={styles.header}>
       <div className={styles.logo}>
-        <Link href='/'>DJ Events</Link>
+        <Link href='/'>
+          <a>DJ Events</a>
+        </Link>
       </div>
+
       <Search />
+
       <nav>
         <ul>
           <li>
-            <Link href='/events'>Events</Link>
+            <Link href='/events'>
+              <a>Events</a>
+            </Link>
           </li>
           {user ? (
-            // if logged in
+            // If logged in
             <>
               <li>
                 <Link href='/events/add'>
@@ -42,14 +48,16 @@ export default function Header() {
               </li>
             </>
           ) : (
-            // if logged out
-            <li>
-              <Link href='/account/login'>
-                <a className='btn-secondary btn-icon'>
-                  <FaSignInAlt /> Login
-                </a>
-              </Link>
-            </li>
+            // If logged out
+            <>
+              <li>
+                <Link href='/account/login'>
+                  <a className='btn-secondary btn-icon'>
+                    <FaSignInAlt /> Login
+                  </a>
+                </Link>
+              </li>
+            </>
           )}
         </ul>
       </nav>
